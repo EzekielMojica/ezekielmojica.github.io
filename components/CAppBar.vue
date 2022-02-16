@@ -15,7 +15,10 @@
   >
     <div class="flex relative h-16 items-center justify-between w-full mx-16">
       <!-- Logo slot  -->
-      <div class="text-4xl text-white">Ezekiel Mojica</div>
+      <div class="text-4xl text-white flex items-center">
+        <logo class="mr-1" />
+        <span>kiel</span>
+      </div>
       <!-- Nav items slot  -->
       <div class="text-white text-xl justify-center items-center flex">
         <ul class="flex space-x-10">
@@ -29,7 +32,9 @@
 </template>
 
 <script>
+import Logo from "./reusables/Logo.vue";
 export default {
+  components: { Logo },
   data() {
     return {
       scroll: 0,

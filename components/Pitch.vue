@@ -1,5 +1,5 @@
 <template>
-  <div class="pb-12">
+  <div>
     <div
       class="
         bg-gradient-to-b
@@ -18,7 +18,6 @@
         </div>
       </div>
     </div>
-    <div class="w-full h-12 rounded-b-[50%] absolute bg-slate-800"></div>
   </div>
 </template>
 

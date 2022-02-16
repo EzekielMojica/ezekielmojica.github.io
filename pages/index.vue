@@ -1,7 +1,7 @@
 <template>
   <div>
     <Pitch />
-    <div class="text-center text-5xl">wowowin</div>
+    <div class="text-5xl text-center my-16">Working in progress...</div>
   </div>
 </template>
 

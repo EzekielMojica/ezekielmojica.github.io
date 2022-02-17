@@ -3,9 +3,9 @@
     <div
       class="
         bg-gradient-to-b
-        from-slate-500
+        from-slate-600
         to-slate-800
-        h-[34rem]
+        h-[36rem]
         flex
         justify-center
         items-center

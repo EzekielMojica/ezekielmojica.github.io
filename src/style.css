@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:target::before {
+  content: "";
+  display: block;
+  height: 56px; /* fixed header height*/
+  margin: -56px 0 0; /* negative fixed header height */
+}

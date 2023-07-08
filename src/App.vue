@@ -28,8 +28,8 @@
       <CHeader>About Me</CHeader>
       <div class="flex flex-wrap lg:flex-nowrap justify-center gap-8 mb-8">
         <img
-          class="mx-auto h-64 w-64 xl:h-64 xl:w-64 border-4 border-black rounded-3xl"
-          src="./assets/wanted.jpg"
+          class="object-contain mx-auto h-64 border-4 border-black rounded-3xl"
+          src="./assets/me2.jpg"
           alt="Ezekiel Mojica"
         />
         <div class="shrink">
@@ -86,20 +86,30 @@
         </template>
       </ProjectBox>
     </div>
-    <div class="mb-14" id="projects">
+    <div class="mb-14" id="resume">
       <CHeader>Resume</CHeader>
       <div class="flex justify-center gap-6">
-        <CButton class="w-52">
-          <CIcon icon="mdi-text-box-search-outline"></CIcon>
-          View Resume
-        </CButton>
-        <CButton class="w-52">
-          <CIcon icon="mdi-download-outline"></CIcon>
-          Download Resume
-        </CButton>
+        <a
+          :href="url('Ezekiel_Mojica_Full_Stack_Developer_Resume.pdf')"
+          target="_blank"
+        >
+          <CButton class="w-52">
+            <CIcon icon="mdi-text-box-search-outline"></CIcon>
+            View Resume
+          </CButton>
+        </a>
+        <a
+          :href="url('Ezekiel_Mojica_Full_Stack_Developer_Resume.pdf')"
+          download
+        >
+          <CButton class="w-52">
+            <CIcon icon="mdi-download-outline"></CIcon>
+            Download Resume
+          </CButton>
+        </a>
       </div>
     </div>
-    <div class="mb-14 lg:w-[768px] mx-auto" id="projects">
+    <div class="mb-14 lg:w-[768px] mx-auto" id="contact">
       <CHeader>Contact Me</CHeader>
       <div>
         <TextField v-model="editedContactMe.name" label="Name"></TextField>
@@ -128,6 +138,27 @@
       >
         <CIcon icon="mdi-information-outline" />
         <span class="text-xs font-semibold">About Me</span>
+      </a>
+      <a
+        href="#projects"
+        class="flex flex-col items-center flex-1 justify-center pb-4 pt-3 text-gray-600 hover:bg-slate-100"
+      >
+        <CIcon icon="mdi-monitor-dashboard" />
+        <span class="text-xs font-semibold">Projects</span>
+      </a>
+      <a
+        href="#resume"
+        class="flex flex-col items-center flex-1 justify-center pb-4 pt-3 text-gray-600 hover:bg-slate-100"
+      >
+        <CIcon icon="mdi-text-box-outline" />
+        <span class="text-xs font-semibold">Resume</span>
+      </a>
+      <a
+        href="#contact"
+        class="flex flex-col items-center flex-1 justify-center pb-4 pt-3 text-gray-600 hover:bg-slate-100"
+      >
+        <CIcon icon="mdi-phone" />
+        <span class="text-xs font-semibold">Contact Me</span>
       </a>
     </div>
   </footer>
@@ -220,6 +251,10 @@ const googleSheetCreator = ref<Project>({
   description: `Google Sheet Creator is a web application created to simplify the process of developing systems with create, update, read, and delete functionalities without the need for programming skills. This application was built using Vue.js, Vuetify, and Pinia for the frontend, and TypeScript, Node.js, Express.js, CouchDB, and Google APIs for the backend. Additionally, users can easily incorporate simple formulas as columns, enhancing the versatility of their applications. By customizing the application to cater to specific company requirements, it provides a tailored solution for various business needs. With this user-friendly interface, individuals can now design their own simple web applications, saving valuable time and eliminating the necessity to learn programming. Despite challenges faced during the development process, such as learning how to utilize Google APIs, with my passion to studying, exploring, and embracing new technologies paved the way for the successful implementation of this web application.`,
   technologies: `Javascript, Vue.js, Vuetify, Jest, Pinia, node.js, Typescript, express, CouchDB, googleapis`,
 });
+
+function url(name: string) {
+  return String(new URL(`/src/assets/${name}`, import.meta.url));
+}
 </script>
 
 <style>
